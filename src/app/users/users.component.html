@@ -1,0 +1,16 @@
+<h2>Users list</h2>
+<ul class="users">
+  <li *ngFor="let user of users" (click)="onSelect(user)">
+    <span class="badge">{{user.id}}</span> {{user.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedUser">
+  <h2>{{selectedUser.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedUser.id}}</div>
+  <div>
+    <label>name: {{selectedUser.name}}</label><br>
+    <label>email: {{selectedUser.email}}</label><br>
+    <label>address: {{selectedUser.address}}</label><br>
+  </div>
+</div>
